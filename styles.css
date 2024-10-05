@@ -1,0 +1,282 @@
+@font-face {
+    font-family: "atari";
+    src: url("/fonts/Atarian/SF Atarian System.ttf") format('truetype');
+}
+
+*{
+    box-sizing: border-box;
+    font-family: atari !important;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.left-panel {
+    width: 25%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgba(38, 38, 38, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#avatar {
+    width: 20vw;
+    height: 20vw;
+    margin: 4px 0px;
+}
+
+.left-panel > span {
+    color: rgb(173, 173, 173);
+    font-size: 4vw;
+}
+
+#socials-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 4px 0px;
+}
+
+#socials-container a {
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 2px;
+}
+
+.socials {
+    width: 4vw;
+    height: 4vw;
+    min-width: 40px;
+    min-height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in;
+    
+    &:hover {
+        filter: grayscale(0%);
+    }
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: 4px 0px;
+    padding: 6px;
+    font-size: 30px;
+    min-width: 120px;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 50);
+    color: rgb(173, 173, 173);
+    overflow-y: visible;
+    text-decoration-line: none;
+    transition: all 0.2s ease;
+    
+    &:visited {
+        color: none;
+    }
+    
+    &:focus {
+        color: none;
+    }
+
+    &:hover {
+        color: #017dbb ;
+    }
+
+}
+
+
+
+.right-panel {
+    width: 75%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: rgba(250, 250, 250, 1);
+    padding: 0px 10%;
+    font-size: 1.5vw;
+}
+
+.right-panel p {
+    margin: 4px 0px;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.intro > span {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.left-arrow {
+    content: ">";
+    display: block;
+    font-size: 5vw;
+    transform: scale(1.4);
+    transition: all 0.3s ease-in-out;
+    animation: left-arrow 2s ease-in-out infinite;
+}
+
+.right-arrow {
+    content: "<";
+    display: block;
+    font-size: 5vw;
+    transform: scale(1.4);
+    will-change: unset;
+    transition: all 0.3s ease-in-out;
+    animation: right-arrow 2s ease-in-out infinite;
+}
+
+@keyframes left-arrow {
+    0% {
+        translate: -40px;
+    }
+    50% {
+        translate: -20px;
+    }
+    100% {
+        translate: -40px;
+    }
+}
+
+@keyframes right-arrow {
+    0% {
+        translate: 40px;
+    }
+    50% {
+        translate: 20px;
+    }
+    100% {
+        translate: 40px;
+    }
+}
+
+.head-label {
+    display: block;
+    width: 100%;
+    text-align: justify;
+    font-size: 2.5vw;
+    border-bottom: black dashed 2px;
+}
+
+.about > p {
+    padding: 0px 6px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-item {
+    display: block;
+    width: 100%;
+    padding: 4px;
+    margin-top: 6px;
+}
+
+.sub-heading {
+    font-size: 1.8vw;
+    text-decoration: underline;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills > div {
+    width: 50%;
+}
+
+.skills .sub-item strong {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    position: sticky;
+    text-align: center;
+}
+
+/* mid-size screen devices */
+@media (max-width:1000px) {
+
+    .download-btn span {
+        display: none;
+    }
+}
+
+/* for mobiles and shit like them */
+@media (max-width:700px) {
+    
+    body {
+        flex-direction: column;
+    }
+
+    body div {
+        width: 100% !important;
+        height: fit-content !important;
+    }
+
+    #avatar {
+        min-width: 150px;
+        min-height: 150px;
+    }
+    
+    .download-btn {
+        flex-wrap: nowrap;
+        min-width: 20px ;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .download-btn span {
+        display: block;
+        font-size: 20px;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .intro {
+        margin: 20px 0px;
+    }
+
+    .intro > span {
+        font-size: 24px !important;
+    }
+
+    .right-panel {
+        font-size: 16px;
+    }
+
+    .head-label {
+        font-size:20px;
+    }
+
+    .sub-heading {
+        font-size: 18px;
+    }
+    
+    .skills .sub-item strong {
+        display: inline;
+    }
+}
