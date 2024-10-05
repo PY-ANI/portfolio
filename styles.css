@@ -1,6 +1,6 @@
 @font-face {
     font-family: "atari";
-    src: url("/fonts/Atarian/SF Atarian System.ttf") format('truetype');
+    src: url("static/fonts/Atarian/SF Atarian System.ttf") format('truetype');
 }
 
 *{
